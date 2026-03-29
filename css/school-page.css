@@ -1,0 +1,78 @@
+/* Styles specifically for the School section hub page */
+
+/* Hero Section at the top */
+.school-hero {
+    background: linear-gradient(135deg, rgba(26, 188, 156, 0.8), rgba(46, 204, 113, 0.8));
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.school-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.school-hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Main content container */
+.school-content-container {
+    padding: 60px 20px;
+}
+
+/* Grid for the class buttons */
+.class-selection-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many columns as possible */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Individual class buttons */
+.class-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* === The Hover Effect === */
+.class-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Starts off-screen */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(26, 188, 156, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.class-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #1abc9c;
+    color: #16a085;
+}
+
+.class-button:hover::before {
+    left: 100%; /* Slides the shimmer effect across the button */
+}

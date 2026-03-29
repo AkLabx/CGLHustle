@@ -1,0 +1,82 @@
+/* Styles specifically for the Contact Us page */
+
+/* Hero Section at the top */
+.contact-hero {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 86, 179, 0.8));
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contact-hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main content container */
+.contact-methods-container {
+    padding: 60px 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.contact-icon-wrapper {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.contact-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-card-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-card-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.contact-card-link:hover {
+    text-decoration: underline;
+}

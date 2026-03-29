@@ -1,0 +1,374 @@
+/* ================================== */
+/* ==== STYLES FOR INDEX.SHTML ONLY ==== */
+/* ==== HOMEPAGE OF WEBSITE ==== */
+/* ================================== */
+
+
+/* ================================== */
+/* ==== [ 1 ]HERO SECTION (UPDATED)   ==== */
+/* ================================== */
+
+/* ================================== */
+/* ==== HERO SECTION (UPDATED FOR CANVAS) ==== */
+/* ================================== */
+
+.hero-section {
+    position: relative; /* This is crucial for positioning the canvas inside */
+    overflow: hidden; /* Prevents any particles from accidentally spilling out */
+    padding: 40px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+}
+
+/* The new canvas style */
+#hero-particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Sits just above the background color */
+}
+
+/* Make sure the main content container is on top of the canvas */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    text-align: center;
+    width: 100%; /* Ensure content takes full width */
+}
+
+.hero-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2em;
+    font-weight: 700;
+    color: #2c3e50;
+    text-shadow: 
+        1px 1px 0px #cbd5e0,
+        2px 2px 0px #a3b0c1,
+        3px 3px 0px #7c8a9e,
+        4px 4px 1px rgba(0,0,0,0.1),
+        4px 4px 5px rgba(0,0,0,0.1),
+        0 0 5px rgba(0,0,0,0.1);
+    margin: 0 0 40px 0;
+    letter-spacing: 1px;
+}
+
+/* ================================== */
+/* ==== HERO ACTION BUTTONS (DESKTOP) ==== */
+/* ================================== */
+
+.hero-actions-scroll-container {
+    /* On desktop, it's just a simple container */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap; /* This is for desktop, will be overridden on mobile */
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #334155;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero-btn i {
+    color: #007bff;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.hero-btn.hero-btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+}
+
+.hero-btn.hero-btn-primary i {
+    color: #ffffff;
+}
+
+.hero-btn.hero-btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #ffffff;
+}
+
+/* ================================================= */
+/* ==== RESPONSIVE STYLES FOR HERO (TABLET & MOBILE) ==== */
+/* ================================================= */
+
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 2.5em; /* Slightly smaller title */
+        margin-bottom: 30px;
+    }
+
+    /* This is the magic for horizontal scrolling */
+    .hero-actions-scroll-container {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scrollbar-width: none; /* Hide scrollbar for Firefox */
+        padding: 0 20px; /* Add padding so buttons don't touch screen edges */
+    }
+
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    .hero-actions-scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hero-actions {
+        display: inline-flex; /* Use inline-flex for the scrolling content */
+        flex-wrap: nowrap; /* PREVENT wrapping */
+        padding-bottom: 15px; /* Add space below for shadow visibility */
+        gap: 12px; /* Adjust gap for mobile */
+    }
+
+    .hero-btn {
+        flex-shrink: 0; /* Prevent buttons from shrinking */
+        padding: 8px 16px; /* Make buttons smaller */
+        font-size: 0.85rem; /* Smaller font */
+        /* The width will now be determined by the content automatically! */
+    }
+}
+
+/* ======================================================= */
+/* ==== START: HIDE PARTICLE CANVAS ON MOBILE/TABLET ==== */
+/* ======================================================= */
+
+/* This media query targets any screen with a width of 1023px or less */
+@media (max-width: 1023px) {
+    #hero-particle-canvas {
+        display: none; /* Simply hide the canvas */
+    }
+}
+
+
+
+/* ================================== */
+/* ==== CATEGORY CAROUSEL STYLES ==== */
+/* ================================== */
+
+/* Container for the new carousel */
+.category-carousel {
+    padding: 10px 10px 30px 10px; /* Add padding for shadow and scrollbar */
+    margin: 0 -10px; /* Counteract padding to align with container edges */
+}
+
+/* New card style for the swipeable view */
+.category-card-swipe {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    height: 220px; /* Give a fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.category-card-swipe:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon-swipe {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+
+.category-card-swipe h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.category-card-swipe p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Customizing the Swiper scrollbar */
+.swiper-scrollbar-drag {
+    background: rgba(0, 123, 255, 0.6);
+}
+
+/* Specific icon colors - From newer design */
+.maths-icon { background-color: #4CAF50; }
+.english-icon { background-color: #2196F3; }
+.reasoning-icon { background-color: #FFC107; }
+.gk-icon { background-color: #E91E63; }
+.computer-icon { background-color: #9C27B0; }
+.stats-icon { background-color: #00BCD4; }
+
+/* Team Section (New, replacing .extra-info-section) */
+.team-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    /* margin-top: 50px; */ /* Removed, padding is enough */
+    /* border-radius: 12px; */ /* Optional */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+     overflow: auto; 
+      min-height: 300px; /* Adjust this value as needed to be taller than your cards */
+}
+
+.team-member-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-member-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #eee;
+}
+
+.team-member-card h4 a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    display: block; /* Ensure link takes up h4 space */
+}
+.team-member-card h4 a:hover {
+    color: #667eea; /* Example hover color */
+}
+
+.team-member-card .role {
+    font-size: 1em;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.team-member-card .description {
+    font-size: 0.9em;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* ================================== */
+/* ==== TESTIMONIALS CAROUSEL STYLES ==== */
+/* ================================== */
+
+.testimonial-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.testimonial-carousel {
+    padding-bottom: 50px; /* Space for pagination dots */
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.testimonial-author-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-author-info {
+    text-align: left;
+}
+
+.testimonial-author-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.testimonial-author-role {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Customizing Swiper's default navigation colors */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #007bff; /* Your site's primary blue */
+}
+
+.swiper-pagination-bullet-active {
+    background: #007bff; /* Your site's primary blue */
+}

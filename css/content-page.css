@@ -1,0 +1,41 @@
+/* Styles specifically for simple content pages like Privacy Policy, About Us, etc. */
+
+/* Styles specifically for Privacy Policy */
+.content-page-container {
+    padding: 40px 0;
+    max-width: 800px;
+    margin: 0 auto; /* Centers the container */
+    line-height: 1.8;
+}
+
+.content-page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.last-updated {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.content-page-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.content-page-container ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.content-page-container ul li {
+    margin-bottom: 10px;
+}

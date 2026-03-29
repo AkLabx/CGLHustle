@@ -1,0 +1,64 @@
+/* Styles specifically for the About Us page */
+
+/* Hero Section at the top */
+.about-hero {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.about-hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Main content container */
+.about-content-container {
+    padding: 50px 0;
+}
+
+.about-section {
+    margin-bottom: 50px;
+}
+
+.about-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Underline effect for titles */
+.about-section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Re-using team grid styles but adding a little margin */
+.about-section .team-grid {
+    margin-top: 30px;
+}
