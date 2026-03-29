@@ -1,0 +1,35 @@
+/* ======================================================= */
+/* === MASTER STYLESHEET LOADER FOR ALL SCHOOL QUIZZES === */
+/* ======================================================= */
+/* This file imports all other CSS modules in the correct  */
+/* order to ensure proper cascade and performance.         */
+/* ======================================================= */
+
+/* 1. Foundational styles */
+@import "./01-variables-and-global.css";
+
+/* 2. Core layout and typography */
+@import "./02-layout-and-typography.css";
+
+/* 3. Page-specific major components */
+@import "./03-filter-section.css";
+@import "./04-navigation-panel.css";
+@import "./05-quiz-core.css";
+
+/* 4. Shared, reusable components */
+@import "./06-shared-buttons.css";
+@import "./07-score-review.css";
+@import "./11-explanation-component.css"; /* Placed before AI explainer */
+@import "./10-ai-explainer.css";
+@import "./12-settings-panel.css";
+
+/* 5. Overlays and Modals */
+@import "./09-overlays-and-modals.css";
+
+/* 6. Modifiers and States */
+@import "./08-animations.css";
+@import "./13-responsive-and-pdf.css";
+@import "./14-fullscreen.css";
+
+/* 7. Purely decorative elements */
+@import "./15-decorations.css";

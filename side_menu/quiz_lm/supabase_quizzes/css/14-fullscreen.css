@@ -1,0 +1,45 @@
+/* =======================================================
+14. FULL SCREEN MODE STYLES (ENGINEERED SOLUTION)
+======================================================= */
+
+/* RULE 1: THE FULLSCREEN HOST */
+/* Establishes the fullscreen environment. It acts as a neutral backdrop
+and a positioning context for its children. */
+#quiz-main-container:fullscreen,
+#quiz-main-container:-webkit-full-screen {
+    background-color: var(--background-gradient-end);
+    overflow-y: auto; /* Allow scrolling if a child view is too tall */
+    padding: 20px 15px; /* Provides space around the content card */
+    position: relative; /* Essential for containing absolutely positioned children */
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+}
+
+/* RULE 2: FIX FOR "CLEAN SLATE" VIEWS (THE REVIEW PAGE) */
+/* This rule targets the direct content holder of the review page and
+re-applies the necessary "card" styling ONLY when in fullscreen. */
+#quiz-main-container:fullscreen #review-container {
+    max-width: 850px;
+    margin: 0 auto; /* Center the card horizontally */
+    background: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* RULE 3: FIX FOR "OVERLAY" VIEWS (THE AI EXPLAINER) */
+/* This forces the AI panel into a true modal overlay, on top of all other content
+(including the still-visible quiz section). */
+#quiz-main-container:fullscreen #ai-explanation-overlay {
+    position: absolute; /* Anchors to the fullscreen container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Use the maximum possible 32-bit signed integer value for z-index
+    to guarantee it wins any stacking context conflict. */
+    z-index: 2147483647;
+}
