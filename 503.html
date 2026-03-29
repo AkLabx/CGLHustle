@@ -1,4 +1,281 @@
- <!-- START OF BULLETPROOF _footer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | CGL Hustle</title>
+
+  <!-- FONT & ICON LIBRARIES (Good to have in header for rendering) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Load Global and Page-Specific Styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- AOS.js CSS for scroll animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+      <!-- ============================================================== -->
+    <!-- ==== START: FAVICONS & SOCIAL MEDIA PREVIEW TAGS ==== -->
+    <!-- ============================================================== -->
+    <!-- Favicon Links (Aapke Generator se) -->
+    <!-- Path bilkul sahi hai kyunki aapne 'my-favicon' folder banaya hai -->
+   <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
+<link rel="shortcut icon" href="/my-favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/my-favicon/manifest.json?v=3" />
+<meta name="apple-mobile-web-app-title" content="CGL Hustle" /> <!-- Isko maine update kar diya hai -->
+<meta name="theme-color" content="#ffffff">
+
+    <!-- ============================================================ -->
+    <!-- ===== END: FAVICONS & SOCIAL MEDIA PREVIEW TAGS ===== -->
+    <!-- ============================================================ -->
+
+    </head>
+    <!-- ============================================= -->
+    <!-- ==== START: 404 PAGE-SPECIFIC STYLES ==== -->
+    <!-- ============================================= -->
+    <style>
+        /* These styles ONLY apply to this page */
+        .error-container-lottie {
+            text-align: center;
+            padding: 20px; /* Reduced padding for better mobile view */
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-title-lottie {
+            font-size: 2.2rem; /* Adjusted for balance */
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 0; /* Reduced space as Lottie is bigger */
+            margin-bottom: 1rem;
+        }
+
+        .error-text-lottie {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 550px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .error-actions-lottie {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .error-button-lottie {
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        /* Primary Button (Homepage) */
+        .error-button-lottie {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .error-button-lottie:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        /* Secondary Button (Go Back) */
+        .error-button-lottie.-secondary {
+            background-color: transparent;
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .error-button-lottie.-secondary:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+    </style>
+    <!-- =========================================== -->
+    <!-- ===== END: 404 PAGE-SPECIFIC STYLES ===== -->
+    <!-- =========================================== -->
+
+</head>
+
+<body>
+        <!-- START OF REFACTORED _header.html -->
+    <!-- Meta tags, Title, etc. should be in the actual page, not the include -->
+   <!-- ============================================= -->
+<!-- ==== START: SVG LOGO PRELOADER HTML ==== -->
+<!-- ============================================= -->
+<div class="preloader">
+    <div class="preloader-spinner-container">
+        <!-- The SVG for the circles -->
+        <svg class="preloader-svg" width="150" height="150" viewBox="0 0 150 150">
+            <!-- The background circle (the track) -->
+            <circle class="spinner-track" cx="75" cy="75" r="65" stroke-width="10" />
+            <!-- The animated progress circle -->
+            <circle class="spinner-progress" cx="75" cy="75" r="65" stroke-width="10" />
+        </svg>
+        <!-- Your logo image, which will sit on top -->
+        <img src="/images/logo.png" alt="Loading..." class="preloader-logo-circular">
+    </div>
+</div>
+<!-- =========================================== -->
+<!-- ===== END: SVG LOGO PRELOADER HTML ===== -->
+<!-- =========================================== -->
+
+    <!-- The Notification Bar -->
+    <div class="notification-bar" aria-label="Important Notice">
+        <div class="notification-content">
+            <span><strong>Announcement:</strong> Welcome CGL Hustle! Some parts of this website are under-construction.   |  </span>
+            <span><strong>Announcement:</strong> Welcome CGL Hustle! Some parts of this website are under-construction.   |  </span>
+        </div>
+    </div>
+
+ <!-- Main Header -->
+<header class="site-header">
+    <div class="container">
+
+         <!-- Left Side: Logo -->
+        <div class="header-left">
+
+            <img src="/images/logo.png" alt="CGL QuizMaster Logo" class="site-logo">
+        </div>
+
+         <!-- Center (Desktop-only Title) -->
+        <div class="header-center">
+            <span class="header-center-title">CGL Hustle</span>
+        </div>
+
+   <!-- NEW Mobile-only Title -->
+        <div class="header-mobile-title">CGL Hustle</div>
+
+        <!-- Right Side: Search, Login, and Logo -->
+        <!-- Right Side -->
+        <div class="header-right">
+
+            <div id="search-icon" class="header-search-icon" title="Search">
+                <i class="fas fa-search"></i>
+            </div>
+
+         <div id="desktop-auth-status" class="desktop-auth-display">
+    <!-- Logged Out State -->
+    <a href="/side_menu/login/login.html" id="desktop-login-link" class="auth-link" style="display: flex;">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Login</span>
+    </a>
+
+    <!-- Logged In State (with new icon) -->
+    <div id="desktop-user-info" style="display:none;" class="user-info-container">
+        <div class="user-display-wrapper">
+            <i class="fas fa-user-circle"></i> <!-- ADDED THIS ICON -->
+            <span id="desktop-user-display" class="user-display"></span>
+        </div>
+        <button id="desktop-logout-btn" class="logout-button-header">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </button>
+    </div>
+</div>
+ <div class="hamburger-menu" id="hamburgerIcon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div> <!-- End of new header-actions wrapper -->
+
+        <!-- The logo is now separate from the actions -->
+        <img src="/images/logo.png" alt="CGL QuizMaster Logo" class="site-logo">
+
+    </div>
+<!-- ... -->
+        </div>
+    </header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <div class="nav-header">
+         <img src="/images/logo.png" alt="CGL QuizMaster Logo" class="nav-logo">
+        <div class="nav-close-btn" id="navCloseBtn"><i class="fas fa-times"></i></div>
+    </div>
+    <ul>
+        <!-- Login / User Info / Logout Item -->
+        <li id="auth-menu-item">
+            <a href="/side_menu/login/login.html" id="mobile-login-link" class="nav-link">
+                <i class="fas fa-sign-in-alt"></i>
+                <span class="nav-item-text">Login / Register</span>
+            </a>
+            <div id="mobile-user-info" style="display:none;" class="mobile-user-logged-in">
+                <div class="user-details-mobile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="mobile-user-display" class="nav-item-text"></span>
+                </div>
+                <button id="mobile-logout-btn" class="nav-link logout-action-mobile">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item-text">Logout</span>
+                </button>
+            </div>
+        </li>
+        <!-- All other nav links remain the same -->
+        <li><a href="/index.html" id="Home"><i class="fas fa-home"></i> <span class="nav-item-text">Home</span></a></li>
+        <li><a href="/side_menu/school/school.html" id="navschoolLink"><i class="fa fa-book fa-fw"></i> <span class="nav-item-text">SCHOOL</span></a></li>
+        <li><a href="/side_menu/quiz_lm/" id="navQuizLmLink"><i class="fas fa-brain"></i> <span class="nav-item-text">Quiz LM</span></a></li>
+ <li>
+    <a href="https://aklabx.github.io/MindFlow/" id="navMindFlowLink">
+      <i class="fa fa-fire fa-fw"></i>
+        <span class="nav-item-text">MindFlow</span>
+    </a>
+</li>
+      <li><a href="/side_menu/download/" id="navDownloadLink"><i class="fas fa-cloud-download-alt"></i> <span class="nav-item-text">Downloads</span></a></li>
+        <li><a href="/side_menu/mocks/" id="navmocksLink"><i class="fa-regular fa-file"></i> <span class="nav-item-text">MOCKS</span></a></li>
+        <li><a href="/side_menu/useful_tools/" id="navtoolsLink"><i class="fa-solid fa-pen-nib"></i> <span class="nav-item-text">Tools</span></a></li>
+        <li><a href="/side_menu/new/" id="navnewLink"><i class="fas fa-fire-alt"></i> <span class="nav-item-text">New</span></a></li>
+
+        <li><a href="/about.html" id="navAboutLink"><i class="fas fa-info-circle"></i> <span class="nav-item-text">About Us</span></a></li>
+        <!-- ============================== -->
+        <li><a href="/index.html#team" id="navTeamLink"><i class="fas fa-users"></i> <span class="nav-item-text">Our Team</span></a></li>
+        <li><a href="/contact.html" id="navContactLink"><i class="fas fa-headset"></i> <span class="nav-item-text">Contact Us</span></a></li>
+    </ul>
+</nav>
+<div id="page-overlay"></div>
+<!-- END OF _header.html --
+    <main class="site-main">
+        <div class="error-container-lottie">
+
+            <!-- The NEW, FREE Lottie Player animation -->
+            <lottie-player
+                src="https://assets9.lottiefiles.com/packages/lf20_kcsr6fcp.json"
+                background="transparent"
+                speed="1"
+                style="width: 300px; height: 300px;"
+                loop
+                autoplay>
+            </lottie-player>
+
+            <h1 class="error-title-lottie">Oops! Page Not Found.</h1>
+            <p class="error-text-lottie">
+                The page you're looking for might have been moved, deleted, under construction, or perhaps it never existed.
+            Let's get you back on track.
+            </p>
+
+            <div class="error-actions-lottie">
+                <a href="/index.html" class="error-button-lottie">Return to Homepage</a>
+                <a href="#" onclick="history.back(); return false;" class="error-button-lottie -secondary">Go to Previous Page</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Includes our standard footer and all scripts (including the Lottie player) -->
+     <!-- START OF BULLETPROOF _footer.html -->
 <!-- ============================================== -->
 <!-- ==== START: NEW, UPGRADED FOOTER SECTION ==== -->
 <!-- ============================================== -->
@@ -12,7 +289,7 @@
                     <p>Your trusted partner for SSC CGL success. A comprehensive preparation platform designed by experts, for aspirants.</p>
                 </div>
             </div>
-            
+
             <!-- Section 2: Quick Links -->
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -24,7 +301,7 @@
                     <!-- Add more links as needed -->
                 </ul>
             </div>
-            
+
             <!-- Section 3: Categories -->
             <div class="footer-section">
                 <h4>Categories</h4>
@@ -36,7 +313,7 @@
                     <li><a href="/pages/computer_quizzes/">Computer Knowledge</a></li>
                 </ul>
             </div>
-            
+
             <!-- Section 4: Connect & Subscribe -->
             <div class="footer-section">
                 <h4>Connect With Us</h4>
@@ -58,7 +335,7 @@
 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>© 2024-2025 CGL Hustle. All rights reserved.</p>
             <div class="footer-bottom-links">
@@ -109,7 +386,7 @@
 <script>
      // Embedded Global Script Start
 
- 
+
     // --- 1. Firebase Configuration and Initialization ---
     // Make sure your API key is correct here.
     const globalFirebaseConfig = {
@@ -130,7 +407,7 @@
 
 // === ADD THIS LINE TO INITIALIZE ANALYTICS ===
     const analytics = firebase.analytics();
-    
+
     // --- 2. Run All Logic After Page Loads ---
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -161,7 +438,7 @@
                 }
             });
         };
-        
+
         const setupLogout = () => {
             const handleLogout = () => {
                 if (typeof Swal !== 'undefined') {
@@ -190,7 +467,7 @@
             const pageOverlay = document.getElementById('page-overlay');
 
             if (!hamburgerIcon || !mobileNav || !navCloseBtn || !pageOverlay) { return; }
-            
+
             const openMenu = () => { mobileNav.classList.add('active'); pageOverlay.classList.add('active'); document.body.classList.add('mobile-nav-is-open'); };
             const closeMenu = () => { mobileNav.classList.remove('active'); pageOverlay.classList.remove('active'); document.body.classList.remove('mobile-nav-is-open'); };
 
@@ -233,7 +510,7 @@ window.addEventListener('load', () => {
             // Check session storage to see if the pop-up has already been shown in this session.
             // 'sessionStorage' ek temporary storage hai jo tab band karne par clear ho jaata hai.
             if (!sessionStorage.getItem('cglHustlePopupShown')) {
-                
+
                 // Agar nahi dikhaya hai, toh SweetAlert pop-up dikhao.
                 Swal.fire({
                     title: 'Welcome to CGL Hustle!',
@@ -253,7 +530,7 @@ window.addEventListener('load', () => {
         // =========================================
         // ===== END: POP-UP ANNOUNCEMENT SCRIPT =====
         // =========================================
-        
+
 // ============================================
         // ==== START: BACK-TO-TOP BUTTON SCRIPT ====
         // ============================================
@@ -285,7 +562,7 @@ window.addEventListener('load', () => {
         // ==========================================
         // ===== END: BACK-TO-TOP BUTTON SCRIPT =====
         // ==========================================
-        
+
         // Inside the DOMContentLoaded listener...
 
 // ===================================
@@ -339,10 +616,10 @@ if (document.querySelector('.category-carousel')) {
              // ===========================================
         // ==== START: SMOOTH SWIPE FIXES ====
         // ===========================================
-        
+
         // This makes the slides move freely without snapping to positions.
         // It creates a very smooth, continuous feel.
-        freeMode: true, 
+        freeMode: true,
 
         // Reduces the "braking" effect after you let go of the swipe.
         // A lower number means it will slide for longer.
@@ -386,7 +663,7 @@ if (document.querySelector('.category-carousel')) {
 // ===== END: CATEGORY CAROUSEL SCRIPT =====
 // ==========================================
 
- 
+
 
 
 // Inside the DOMContentLoaded listener...
@@ -403,7 +680,7 @@ if (searchIcon && searchOverlay && searchCloseBtn) {
     const openSearch = () => {
         searchOverlay.classList.add('active');
         // Automatically focus the input field when overlay opens
-        searchInput.focus(); 
+        searchInput.focus();
     };
 
     const closeSearch = () => {
@@ -412,7 +689,7 @@ if (searchIcon && searchOverlay && searchCloseBtn) {
 
     searchIcon.addEventListener('click', openSearch);
     searchCloseBtn.addEventListener('click', closeSearch);
-    
+
     // Optional: Close overlay if user clicks outside the content box
     searchOverlay.addEventListener('click', (event) => {
         if (event.target === searchOverlay) {
@@ -460,7 +737,7 @@ const performSearch = () => {
     // === THE FIX - PART 1: Define variables inside the function ===
     const searchInputEl = document.getElementById('search-input');
     const searchResultsContainer = document.getElementById('search-results-container');
-    
+
     // Check if elements exist before proceeding
     if (!fuse || !searchInputEl || !searchResultsContainer) return;
 
@@ -505,7 +782,7 @@ if (searchInputForListener) {
 // =================================
 // ===== END: FUSE.JS SEARCH LOGIC =====
 // =================================
-    
+
   // ... inside your embedded <script> block and the DOMContentLoaded listener ...
 
 // ===================================================
@@ -517,12 +794,12 @@ if (newsletterForm) {
     // We attach the listener directly to the form's 'submit' event
     newsletterForm.addEventListener('submit', function(event) {
         // 1. THIS IS THE MOST IMPORTANT LINE. It stops the page from reloading.
-        event.preventDefault(); 
+        event.preventDefault();
         event.stopPropagation(); // Also stop the event from bubbling up
 
         // We get the input element *inside* the event handler to be safe
         const newsletterEmailInput = document.getElementById('newsletterEmail');
-        
+
         // Check if SweetAlert (Swal) is actually available
         if (typeof Swal === 'undefined') {
             console.error("SweetAlert2 (Swal) is not loaded!");
@@ -530,7 +807,7 @@ if (newsletterForm) {
             alert("Thank you for subscribing!");
             return; // Stop the function here
         }
-        
+
         if (!newsletterEmailInput) {
             console.error("Newsletter email input not found!");
             return;
@@ -613,7 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // If they don't exist on the current page, stop the script.
     if (!heroSection || !canvas) {
-        return; 
+        return;
     }
 
     const ctx = canvas.getContext('2d');
@@ -751,3 +1028,5 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- ================================================= -->
 <!-- ===== END: EMBEDDED HERO PARTICLE SCRIPT (FIX) ==== -->
 <!-- ================================================= -->
+</body>
+</html>
