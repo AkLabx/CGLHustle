@@ -1,0 +1,195 @@
+/* =======================================================
+6. SHARED BUTTONS & CONTROLS
+======================================================= */
+button#next-btn,
+button#restart-btn,
+button#review-btn,
+button#prev-review-btn,
+button#next-review-btn,
+button#back-to-summary-btn,
+button#restart-full-quiz-btn,
+button#share-results-btn,
+button#next-group-btn {
+    padding: 12px 22px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    box-shadow: 0 3px 8px rgba(63, 81, 181, 0.3);
+}
+
+button#next-btn:hover,
+button#restart-btn:hover,
+button#review-btn:hover,
+button#prev-review-btn:hover,
+button#next-review-btn:hover,
+button#back-to-summary-btn:hover,
+button#restart-full-quiz-btn:hover,
+#share-results-btn:hover,
+button#next-group-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+button#next-group-btn {
+    background-color: var(--correct-color);
+}
+button#next-group-btn:hover:not(:disabled) {
+    background-color: #388e3c;
+}
+
+button#next-btn:active,
+button#restart-btn:active,
+button#review-btn:active,
+button#prev-review-btn:active,
+button#next-review-btn:active,
+button#back-to-summary-btn:active,
+button#restart-full-quiz-btn:active,
+#share-results-btn:active,
+button#next-group-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#lifeline-btn {
+    padding: 8px 15px;
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+#lifeline-btn:hover:not(:disabled) {
+    background-color: var(--accent-dark);
+}
+
+#lifeline-btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+#lifeline-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#settings-btn,
+#mute-btn,
+#mute-btn-review,
+#zoom-in-btn,
+#zoom-out-btn,
+#zoom-in-btn-review,
+#zoom-out-btn-review,
+#shuffle-btn {
+    padding: 8px 10px;
+    font-size: 0.95em;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--text-color-light);
+    color: white;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    min-width: 38px;
+    text-align: center;
+}
+
+#settings-btn:hover,
+#mute-btn:hover,
+#mute-btn-review:hover,
+#zoom-in-btn:hover,
+#zoom-out-btn:hover,
+#zoom-in-btn-review:hover,
+#zoom-out-btn-review:hover,
+#shuffle-btn:hover {
+    background-color: var(--text-color-medium);
+}
+
+#settings-btn:active,
+#mute-btn:active,
+#mute-btn-review:active,
+#zoom-in-btn:active,
+#zoom-out-btn:active,
+#zoom-in-btn-review:active,
+#zoom-out-btn-review:active,
+#shuffle-btn:active {
+    transform: translateY(1px);
+}
+
+#settings-btn i,
+#mute-btn i,
+#mute-btn-review i,
+#zoom-in-btn i,
+#zoom-out-btn i,
+#zoom-in-btn-review i,
+#zoom-out-btn-review i,
+#shuffle-btn i {
+    font-size: 1.1em;
+}
+
+#zoom-in-btn:disabled,
+#zoom-out-btn:disabled,
+#zoom-in-btn-review:disabled,
+#zoom-out-btn-review:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#ai-explainer-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+#ai-explainer-btn:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+#ai-explainer-btn:disabled {
+    background: #ccc;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#ai-explainer-btn.ai-thinking i {
+    display: none;
+}
+
+#ai-explainer-btn.ai-thinking::before {
+    content: "\f110"; /* Font Awesome spinner icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    animation: fa-spin 1s infinite linear;
+}

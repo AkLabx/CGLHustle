@@ -1,0 +1,104 @@
+/* =======================================================
+13. RESPONSIVE DESIGN & PDF RENDERER
+======================================================= */
+
+#pdf-render-container {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: white;
+    padding: 20px;
+    font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+    color: var(--text-color-dark);
+}
+
+@media (max-width: 768px) {
+    body::before {
+        font-size: 8vw;
+    }
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 1em;
+        min-height: 50px;
+    }
+    .options button,
+    #review-options button {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+    #timer {
+        font-size: 1em;
+        padding: 6px 14px;
+        min-width: 100px;
+    }
+    #status-tracker,
+    #review-status-tracker {
+        font-size: 0.85em;
+        padding: 4px;
+    }
+    
+    #quiz-nav-bar {
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        padding: 10px 20px;
+    }
+    .ai-explanation-overlay {
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .ai-explanation-modal {
+        transform: scale(0.95);
+        border-radius: 16px;
+        height: 90vh;
+        max-height: 800px;
+    }
+    .ai-explanation-overlay.visible .ai-explanation-modal {
+        transform: scale(1);
+    }
+
+    .ai-explanation-header h2 { font-size: 1.3em; }
+
+    .ai-explanation-body { padding: 25px 30px; }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+    h2 {
+        font-size: 0.95em;
+    }
+    .options button,
+    #review-options button {
+        font-size: 0.9em;
+    }
+    
+    #status-tracker,
+    #review-status-tracker {
+        font-size: 0.85em;
+        padding: 4px;
+    }
+
+    .quiz-nav-btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #reset-filters-btn-quiz,
+    #reset-filters-btn-ppt,
+    #reset-filters-btn-json {
+        width: 100%;
+    }
+}

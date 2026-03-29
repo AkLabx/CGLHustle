@@ -1,0 +1,99 @@
+/* =======================================================
+1. ROOT VARIABLES & GLOBAL STYLES
+======================================================= */
+:root {
+    --primary-color: #3f51b5;
+    --primary-dark: #303f9f;
+    --primary-light: #c5cae9;
+    --accent-color: #ffb300;
+    --accent-dark: #ffa000;
+    --background-gradient-start: #f8f9fa;
+    --background-gradient-end: #e8eaf6;
+    --text-color-dark: #212121;
+    --text-color-medium: #424242;
+    --text-color-light: #757575;
+    --container-bg: rgba(255, 255, 255, 0.99);
+    --border-color: #e0e0e0;
+    --correct-color: #4caf50;
+    --correct-text: #ffffff;
+    --wrong-color: #f44336;
+    --wrong-text: #ffffff;
+    --reveal-correct-bg: #e8f5e9;
+    --reveal-correct-text: #2e7d32;
+    --reveal-correct-border: var(--correct-color);
+    --icon-color: var(--primary-color);
+    --button-text-color: #ffffff;
+    --timer-bar-color: var(--primary-color);
+    --ai-tutor-color: #fcfcfc;
+    --ai-tutor-color-dark: #d6d4d3;
+    --shadow-color: rgba(0, 0, 0, 0.12);
+    --body-watermark-color: rgba(48, 63, 159, 0.08);
+    --button-bg: #ffffff;
+    --button-hover-bg: #f5f5f5;
+    --button-border-color: #bdbdbd;
+    --button-hover-border-color: #999;
+    --settings-panel-bg: #ffffff;
+    --settings-header-bg: #f8f9fa;
+}
+
+body[data-theme='dark'] {
+    --primary-color: #818cf8;
+    --primary-dark: #a5b4fc;
+    --primary-light: #4f46e5;
+    --accent-color: #facc15;
+    --accent-dark: #eab308;
+    --background-gradient-start: #111827;
+    --background-gradient-end: #1e293b;
+    --text-color-dark: #f8fafc;
+    --text-color-medium: #cbd5e1;
+    --text-color-light: #94a3b8;
+    --container-bg: #1e293b;
+    --border-color: #334155;
+    --correct-color: #22c55e;
+    --correct-text: #ffffff;
+    --wrong-color: #ef4444;
+    --wrong-text: #ffffff;
+    --reveal-correct-bg: rgba(34, 197, 94, 0.15);
+    --reveal-correct-text: #4ade80;
+    --reveal-correct-border: var(--correct-color);
+    --shadow-color: rgba(0, 0, 0, 0.7);
+    --body-watermark-color: rgba(232, 234, 246, 0.05);
+    --button-bg: #334155;
+    --button-hover-bg: #475569;
+    --button-border-color: #475569;
+    --button-hover-border-color: #64748b;
+    --settings-panel-bg: #1e293b;
+    --settings-header-bg: #111827;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+    color: var(--text-color-dark);
+    margin: 0;
+    padding: 20px 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.animations-disabled .fireball {
+    display: none;
+}

@@ -1,0 +1,37 @@
+/* =======================================================
+15. DECORATIONS & SPECIAL EFFECTS
+======================================================= */
+body::before {
+    content: "CGL Hustle";
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4vw;
+    color: var(--body-watermark-color);
+    font-weight: 700;
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.fireball {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#fireball1 { background: radial-gradient(circle, #ffcc00, #ff6600, #cc3300, #660000); box-shadow: 0 0 10px #ff6600, 0 0 15px #ffcc00; }
+#fireball2 { background: radial-gradient(circle, #E0BBE4, #957DAD, #6A0DAD, #301934); box-shadow: 0 0 12px #BFA8D8, 0 0 18px #E0BBE4; }
+#fireball3 { background: radial-gradient(circle, #44ccff, #0088ff, #0044ee, #000099); box-shadow: 0 0 10px #0088ff, 0 0 15px #44ccff; }
+#fireball4 { background: radial-gradient(circle, #ccff44, #88ff00, #44ee00, #009900); box-shadow: 0 0 10px #88ff00, 0 0 15px #ccff44; }
+#fireball5 { background: radial-gradient(circle, #ff44cc, #ff0088, #ee0044, #990000); box-shadow: 0 0 10px #ff0088, 0 0 15px #ff44cc; }
+#fireball6 { background: radial-gradient(circle, #ffffff, #dddddd, #bbbbbb, #888888); box-shadow: 0 0 10px #dddddd, 0 0 15px #ffffff; }
+#fireball7 { background: radial-gradient(circle, #FFEB99 , #FFD700 , #DAA520 , #B8860B ); box-shadow: 0 0 10px #FFD700, 0 0 15px #FFEB99; }
+#fireball8 { background: radial-gradient(circle, #626199, #003cff, #00e6ee, #00998c); box-shadow: 0 0 10px #003cff, 0 0 15px #44ffc7; }
+#fireball9 { background: radial-gradient(circle, #FF6347 , #DC143C , #B22222 , #800000 ); box-shadow: 0 0 10px #DC143C, 0 0 15px #FF6347; }
+#fireball10 { background: radial-gradient(circle, #C19A6B , #A0522D , #8B4513 , #5D4037 ); box-shadow: 0 0 10px #A0522D, 0 0 15px #C19A6B; }

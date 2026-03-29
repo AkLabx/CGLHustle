@@ -1,0 +1,114 @@
+/* =======================================================
+2. LAYOUT & TYPOGRAPHY
+======================================================= */
+.container {
+    max-width: 850px;
+    width: 95%;
+    padding: 25px 30px;
+    background: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-breadcrumb-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 15px auto;
+    padding: 10px 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+body[data-theme='dark'] .quiz-breadcrumb-container {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quiz-breadcrumb {
+    font-size: 0.85em;
+    color: var(--text-color-medium);
+    text-align: left;
+    padding-left: 15px;
+}
+
+.quiz-breadcrumb a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.quiz-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.quiz-breadcrumb span.current-topic {
+    color: var(--text-color-dark);
+    font-weight: bold;
+}
+
+.quiz-breadcrumb span.breadcrumb-filters {
+    color: var(--text-color-light);
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-left: 8px;
+}
+
+h1 {
+    font-size: 1.4em;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+h1 .icon {
+    font-size: 0.9em;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: var(--icon-color);
+}
+
+h2 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-color-dark);
+    min-height: 60px;
+    line-height: 1.5;
+}
+
+/* Hindi Font Styling */
+.hindi-text,
+#question-text .hindi-text,
+.options button .hindi-text,
+#review-question-text .hindi-text,
+#review-options button .hindi-text,
+#explanation .hindi-text,
+#review-explanation .hindi-text {
+    font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+
+h2 hr.lang-separator {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 8px 0;
+}
+
+h2 .hindi-text {
+    color: var(--text-color-medium);
+    font-size: 0.98em;
+}
+
+.gemini-color {
+    max-width: 100%;
+    max-height: 25px;
+    width: auto;
+    height: auto;
+}
