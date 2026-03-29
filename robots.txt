@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap (update with your actual domain)
+Sitemap: https://cglhustle.free.nf/sitemap.xml
+
+# Disallow access to admin areas if any
+Disallow: /admin/
+Disallow: /private/

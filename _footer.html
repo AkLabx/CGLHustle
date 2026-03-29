@@ -1,0 +1,753 @@
+ <!-- START OF BULLETPROOF _footer.html -->
+<!-- ============================================== -->
+<!-- ==== START: NEW, UPGRADED FOOTER SECTION ==== -->
+<!-- ============================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Section 1: Logo and Brand Info -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-graduation-cap"></i> CGL Hustle</h3>
+                    <p>Your trusted partner for SSC CGL success. A comprehensive preparation platform designed by experts, for aspirants.</p>
+                </div>
+            </div>
+            
+            <!-- Section 2: Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/index.shtml">Home</a></li>
+                    <li><a href="/about.shtml">About Us</a></li>
+                    <li><a href="/contact.shtml">Contact</a></li>
+                    <li><a href="/privacy.shtml">Privacy Policy</a></li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </div>
+            
+            <!-- Section 3: Categories -->
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="/pages/maths_quizzes/">Quantitative Aptitude</a></li>
+                    <li><a href="/pages/english_quizzes/">English Language</a></li>
+                    <li><a href="/pages/reasoning_quizzes/">Reasoning</a></li>
+                    <li><a href="/pages/gk_quizzes/">General Awareness</a></li>
+                    <li><a href="/pages/computer_quizzes/">Computer Knowledge</a></li>
+                </ul>
+            </div>
+            
+            <!-- Section 4: Connect & Subscribe -->
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+
+             <div class="newsletter">
+    <h5>Subscribe to Updates</h5>
+    <form class="newsletter-form" id="newsletterForm">
+        <!-- === THIS IS THE FIX: ADD THE ID ATTRIBUTE === -->
+        <input type="email" placeholder="Enter your email" class="newsletter-input" required id="newsletterEmail">
+        <button type="submit" class="newsletter-btn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </form>
+</div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024-2025 CGL Hustle. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy.shtml">Privacy Policy</a>
+                <a href="/terms.shtml">Terms of Service</a> <!-- Example link -->
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ============================================ -->
+<!-- ===== END: NEW, UPGRADED FOOTER SECTION ====== -->
+<!-- ============================================ -->
+<!-- =================================== -->
+<!-- ==== START: BACK-TO-TOP BUTTON ==== -->
+<!-- =================================== -->
+<a href="#" class="back-to-top-button" id="backToTopButton" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<!-- ================================= -->
+<!-- ===== END: BACK-TO-TOP BUTTON ===== -->
+<!-- ================================= -->
+
+<!-- ======================================================= -->
+<!-- === ALL SITE JAVASCRIPT IS LOADED HERE === -->
+<!-- ======================================================= -->
+
+<!-- 1. VENDOR LIBRARIES (The tools we use) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- === ADD THIS LINE FOR THE MONKEY ANIMATION === -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- In _footer.html, with other library scripts -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- === ADD THIS LINE FOR THE SEARCH LIBRARY === -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
+<!-- === ADD THIS LINE FOR DRAG-AND-DROP FUNCTIONALITY === -->
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<!-- ======================================================= -->
+<!-- =================================================================== -->
+<!-- === START: EMBEDDED GLOBAL SCRIPT (To Bypass Caching Issues) === -->
+<!-- =================================================================== -->
+<script>
+     // Embedded Global Script Start
+
+ 
+    // --- 1. Firebase Configuration and Initialization ---
+    // Make sure your API key is correct here.
+    const globalFirebaseConfig = {
+      apiKey: "AIzaSyCvVvZVAUGhDE0eqOvvkdTjHWxlig01_mU", // This was in your original file
+      authDomain: "sscranker.firebaseapp.com",
+      projectId: "sscranker",
+      storageBucket: "sscranker.firebasestorage.app",
+      messagingSenderId: "268551152654",
+      appId: "1:268551152654:web:1c76863894052266a2085f",
+      measurementId: "G-0C51TPVFQ8"
+    };
+
+    if (!firebase.apps.length) {
+        // This is the line that was causing the error. It is fixed here.
+        firebase.initializeApp(globalFirebaseConfig);
+    }
+    const globalAuth = firebase.auth();
+
+// === ADD THIS LINE TO INITIALIZE ANALYTICS ===
+    const analytics = firebase.analytics();
+    
+    // --- 2. Run All Logic After Page Loads ---
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const setupAuthUI = () => {
+            const desktopLoginLink = document.getElementById('desktop-login-link');
+            const desktopUserInfoDiv = document.getElementById('desktop-user-info');
+            const desktopUserDisplaySpan = document.getElementById('desktop-user-display');
+            const desktopLogoutButton = document.getElementById('desktop-logout-btn');
+            const mobileLoginLinkAnchor = document.getElementById('mobile-login-link');
+            const mobileUserInfoDiv = document.getElementById('mobile-user-info');
+            const mobileUserDisplaySpan = document.getElementById('mobile-user-display');
+            const mobileLogoutButton = document.getElementById('mobile-logout-btn');
+
+            globalAuth.onAuthStateChanged(user => {
+                const userName = user ? (user.displayName || user.email || 'User') : '';
+                if (user) {
+                    if (desktopLoginLink) desktopLoginLink.style.display = 'none';
+                    if (desktopUserInfoDiv) desktopUserInfoDiv.style.display = 'flex';
+                    if (desktopUserDisplaySpan) desktopUserDisplaySpan.textContent = userName;
+                    if (mobileLoginLinkAnchor) mobileLoginLinkAnchor.style.display = 'none';
+                    if (mobileUserInfoDiv) mobileUserInfoDiv.style.display = 'block';
+                    if (mobileUserDisplaySpan) mobileUserDisplaySpan.textContent = userName;
+                } else {
+                    if (desktopLoginLink) desktopLoginLink.style.display = 'flex';
+                    if (desktopUserInfoDiv) desktopUserInfoDiv.style.display = 'none';
+                    if (mobileLoginLinkAnchor) mobileLoginLinkAnchor.style.display = 'flex';
+                    if (mobileUserInfoDiv) mobileUserInfoDiv.style.display = 'none';
+                }
+            });
+        };
+        
+        const setupLogout = () => {
+            const handleLogout = () => {
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire({ title: 'Are you sure?', text: "You will be logged out.", icon: 'warning', showCancelButton: true, confirmButtonColor: '#3085d6', cancelButtonColor: '#d33', confirmButtonText: 'Yes, log out!' })
+                    .then((result) => {
+                        if (result.isConfirmed) {
+                            globalAuth.signOut().then(() => { window.location.href = '/index.shtml'; });
+                        }
+                    });
+                } else {
+                    if (confirm("Are you sure?")) {
+                        globalAuth.signOut().then(() => { window.location.href = '/index.shtml'; });
+                    }
+                }
+            };
+            const desktopLogoutButton = document.getElementById('desktop-logout-btn');
+            const mobileLogoutButton = document.getElementById('mobile-logout-btn');
+            if (desktopLogoutButton) desktopLogoutButton.addEventListener('click', handleLogout);
+            if (mobileLogoutButton) mobileLogoutButton.addEventListener('click', handleLogout);
+        };
+
+        const setupMobileMenu = () => {
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
+            const mobileNav = document.getElementById('mobileNav');
+            const navCloseBtn = document.getElementById('navCloseBtn');
+            const pageOverlay = document.getElementById('page-overlay');
+
+            if (!hamburgerIcon || !mobileNav || !navCloseBtn || !pageOverlay) { return; }
+            
+            const openMenu = () => { mobileNav.classList.add('active'); pageOverlay.classList.add('active'); document.body.classList.add('mobile-nav-is-open'); };
+            const closeMenu = () => { mobileNav.classList.remove('active'); pageOverlay.classList.remove('active'); document.body.classList.remove('mobile-nav-is-open'); };
+
+            hamburgerIcon.addEventListener('click', openMenu);
+            navCloseBtn.addEventListener('click', closeMenu);
+            pageOverlay.addEventListener('click', closeMenu);
+        };
+
+        setupAuthUI();
+        setupLogout();
+        setupMobileMenu();
+    });
+
+       // --- THIS IS THE NEW, SAFER LOCATION FOR AOS.init() ---
+        // Initialize AOS animations inside this listener
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+    });
+
+     // =============================================
+        // ==== START: PROGRESS BAR TEXT-CHANGE LOGIC ====
+        // =============================================
+        // Ab ye code DOMContentLoaded ke andar hai, isliye ye hamesha element ko dhoondh lega.
+       // ==== THIS IS THE ONLY PRELOADER SCRIPT YOU NEED ====
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.classList.add('loaded');
+    }
+});
+        // ===========================================
+        // ==== END: PROGRESS BAR PRELOADER LOGIC ====
+        // ===========================================
+    // ===========================================
+        // ==== START: POP-UP ANNOUNCEMENT SCRIPT ====
+        // ===========================================
+        const showAnnouncementPopup = () => {
+            // Check session storage to see if the pop-up has already been shown in this session.
+            // 'sessionStorage' ek temporary storage hai jo tab band karne par clear ho jaata hai.
+            if (!sessionStorage.getItem('cglHustlePopupShown')) {
+                
+                // Agar nahi dikhaya hai, toh SweetAlert pop-up dikhao.
+                Swal.fire({
+                    title: 'Welcome to CGL Hustle!',
+                    html: 'Some parts of our website are still under construction. <br>We are working hard to bring you the best experience!',
+                    icon: 'info',
+                    confirmButtonText: 'Got it!',
+                    allowOutsideClick: false // User ko button par click karna hi hoga.
+                }).then(() => {
+                    // Jab user 'Got it!' par click kare, toh session storage mein ek flag set kar do.
+                    sessionStorage.setItem('cglHustlePopupShown', 'true');
+                });
+            }
+        };
+
+        // Pop-up function ko call karo.
+        showAnnouncementPopup();
+        // =========================================
+        // ===== END: POP-UP ANNOUNCEMENT SCRIPT =====
+        // =========================================
+        
+// ============================================
+        // ==== START: BACK-TO-TOP BUTTON SCRIPT ====
+        // ============================================
+        const backToTopButton = document.getElementById('backToTopButton');
+
+        if (backToTopButton) {
+            // Function to show/hide the button based on scroll position
+            const toggleBackToTopButton = () => {
+                if (window.scrollY > 300) { // Show button after scrolling 300px
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            };
+
+            // Function to scroll to the top smoothly
+            const scrollToTop = (event) => {
+                event.preventDefault(); // Prevents the link from adding '#' to the URL
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // This creates the smooth scroll effect
+                });
+            };
+
+            // Add event listeners
+            window.addEventListener('scroll', toggleBackToTopButton);
+            backToTopButton.addEventListener('click', scrollToTop);
+        }
+        // ==========================================
+        // ===== END: BACK-TO-TOP BUTTON SCRIPT =====
+        // ==========================================
+        
+        // Inside the DOMContentLoaded listener...
+
+// ===================================
+// ==== START: CAROUSEL SCRIPT ====
+// ===================================
+// Check if the carousel container exists on the current page
+if (document.querySelector('.testimonial-carousel')) {
+    const swiper = new Swiper('.testimonial-carousel', {
+        // Optional parameters
+        loop: true, // Makes the slider continuous
+        autoplay: {
+            delay: 5000, // Slides change every 5 seconds
+            disableOnInteraction: false, // Autoplay continues even after user interacts
+        },
+
+        // If we need pagination (the dots)
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        // If we need navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // How many slides to show at once
+        slidesPerView: 1,
+        spaceBetween: 30, // Space between slides
+    });
+}
+// =================================
+// ===== END: CAROUSEL SCRIPT =====
+// =================================
+// ============================================
+// ==== START: CATEGORY CAROUSEL SCRIPT ====
+// ============================================
+if (document.querySelector('.category-carousel')) {
+    const categorySwiper = new Swiper('.category-carousel', {
+        // How many slides to show
+        slidesPerView: 'auto',
+        spaceBetween: 15, // Space between cards
+
+        // Add the scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            hide: false,
+            draggable: true,
+        },
+             // ===========================================
+        // ==== START: SMOOTH SWIPE FIXES ====
+        // ===========================================
+        
+        // This makes the slides move freely without snapping to positions.
+        // It creates a very smooth, continuous feel.
+        freeMode: true, 
+
+        // Reduces the "braking" effect after you let go of the swipe.
+        // A lower number means it will slide for longer.
+        freeModeMomentumRatio: 0.5,
+
+        // Reduces the friction when you are actively swiping.
+        // A lower number means less resistance.
+        resistanceRatio: 0.85,
+
+        // =========================================
+        // ===== END: SMOOTH SWIPE FIXES =====
+        // =========================================
+
+
+        // Responsive settings
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1.5,
+              spaceBetween: 15
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2.5,
+              spaceBetween: 20
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 3.5,
+              spaceBetween: 25
+            },
+            // when window width is >= 1024px
+            1024: {
+              slidesPerView: 4.5,
+              spaceBetween: 30
+            }
+        }
+    });
+}
+// ==========================================
+// ===== END: CATEGORY CAROUSEL SCRIPT =====
+// ==========================================
+
+ 
+
+
+// Inside the DOMContentLoaded listener...
+
+// ===================================
+// ==== START: SEARCH TOGGLE SCRIPT ====
+// ===================================
+const searchIcon = document.getElementById('search-icon');
+const searchOverlay = document.getElementById('search-overlay');
+const searchCloseBtn = document.getElementById('search-close-btn');
+const searchInput = document.getElementById('search-input');
+
+if (searchIcon && searchOverlay && searchCloseBtn) {
+    const openSearch = () => {
+        searchOverlay.classList.add('active');
+        // Automatically focus the input field when overlay opens
+        searchInput.focus(); 
+    };
+
+    const closeSearch = () => {
+        searchOverlay.classList.remove('active');
+    };
+
+    searchIcon.addEventListener('click', openSearch);
+    searchCloseBtn.addEventListener('click', closeSearch);
+    
+    // Optional: Close overlay if user clicks outside the content box
+    searchOverlay.addEventListener('click', (event) => {
+        if (event.target === searchOverlay) {
+            closeSearch();
+        }
+    });
+}
+// =================================
+// ===== END: SEARCH TOGGLE SCRIPT =====
+// =================================
+
+// ... inside the DOMContentLoaded listener ...
+
+// ===================================
+// ==== START: FUSE.JS SEARCH LOGIC (Corrected) ====
+// ===================================
+
+// --- Remove the variable definitions from here ---
+// const searchInputEl = document.getElementById('search-input');
+// const searchResultsContainer = document.getElementById('search-results-container');
+let fuse;
+
+// --- 1. Fetch the search data and initialize Fuse.js ---
+fetch('/data/search-index.json')
+    .then(response => response.json())
+    .then(data => {
+        const options = {
+            includeScore: true,
+            keys: ['title', 'tags'],
+            threshold: 0.4
+        };
+        fuse = new Fuse(data, options);
+    })
+    .catch(error => {
+        console.error("Error fetching search index:", error);
+        // Define searchResultsContainer here to show the error
+        const searchResultsContainer = document.getElementById('search-results-container');
+        if (searchResultsContainer) {
+            searchResultsContainer.innerHTML = "<p>Error loading search data.</p>";
+        }
+    });
+
+// --- 2. Function to perform the search and display results ---
+const performSearch = () => {
+    // === THE FIX - PART 1: Define variables inside the function ===
+    const searchInputEl = document.getElementById('search-input');
+    const searchResultsContainer = document.getElementById('search-results-container');
+    
+    // Check if elements exist before proceeding
+    if (!fuse || !searchInputEl || !searchResultsContainer) return;
+
+    const query = searchInputEl.value.trim();
+
+    if (query.length < 2) {
+        searchResultsContainer.innerHTML = "";
+        return;
+    }
+
+    const results = fuse.search(query);
+    displayResults(results);
+};
+
+// --- 3. Function to format and display the results ---
+const displayResults = (results) => {
+    // === THE FIX - PART 2: Define the container variable here too ===
+    const searchResultsContainer = document.getElementById('search-results-container');
+    if (!searchResultsContainer) return;
+
+    searchResultsContainer.innerHTML = ""; // Clear old results
+
+    if (results.length === 0) {
+        searchResultsContainer.innerHTML = `<p class="search-no-results">No results found.</p>`;
+        return;
+    }
+
+    const resultsHtml = results.map(result => {
+        const { title, url } = result.item;
+        return `<a href="${url}" class="search-result-item"><span class="search-result-title">${title}</span></a>`;
+    }).join('');
+
+    searchResultsContainer.innerHTML = resultsHtml;
+};
+
+// --- 4. Add an event listener to the input box ---
+// === THE FIX - PART 3: Find the element right before adding the listener ===
+const searchInputForListener = document.getElementById('search-input');
+if (searchInputForListener) {
+    searchInputForListener.addEventListener('input', performSearch);
+}
+// =================================
+// ===== END: FUSE.JS SEARCH LOGIC =====
+// =================================
+    
+  // ... inside your embedded <script> block and the DOMContentLoaded listener ...
+
+// ===================================================
+// ==== START: NEWSLETTER FORM SCRIPT (ROBUST V2) ====
+// ===================================================
+const newsletterForm = document.getElementById('newsletterForm');
+
+if (newsletterForm) {
+    // We attach the listener directly to the form's 'submit' event
+    newsletterForm.addEventListener('submit', function(event) {
+        // 1. THIS IS THE MOST IMPORTANT LINE. It stops the page from reloading.
+        event.preventDefault(); 
+        event.stopPropagation(); // Also stop the event from bubbling up
+
+        // We get the input element *inside* the event handler to be safe
+        const newsletterEmailInput = document.getElementById('newsletterEmail');
+        
+        // Check if SweetAlert (Swal) is actually available
+        if (typeof Swal === 'undefined') {
+            console.error("SweetAlert2 (Swal) is not loaded!");
+            // Provide a basic alert as a fallback
+            alert("Thank you for subscribing!");
+            return; // Stop the function here
+        }
+        
+        if (!newsletterEmailInput) {
+            console.error("Newsletter email input not found!");
+            return;
+        }
+
+        const email = newsletterEmailInput.value.trim();
+
+        // 2. Simple email validation
+        if (email && email.includes('@') && email.includes('.')) {
+            // 3. Show a SUCCESS message
+            Swal.fire({
+                title: 'Subscribed!',
+                text: 'Thank you for subscribing to our newsletter.',
+                icon: 'success',
+                timer: 2500,
+                showConfirmButton: false,
+                toast: true, // Use a less intrusive "toast" notification
+                position: 'top-end' // Position it in the top-right
+            });
+            newsletterEmailInput.value = '';
+
+        } else {
+            // 4. Show an ERROR message
+            Swal.fire({
+                title: 'Oops...',
+                text: 'Please enter a valid email address.',
+                icon: 'error'
+            });
+        }
+    });
+}
+// ===============================================
+// ===== END: NEWSLETTER FORM SCRIPT (ROBUST V2) =====
+// ===============================================
+
+</script>
+
+<!-- =================================================== -->
+<!-- ==== START: EMBEDDED HERO PARTICLE SCRIPT (FIX) ==== -->
+<!-- =================================================== -->
+<script>
+
+        // --- START: DARK MODE LOGIC ---
+    const themeToggle = document.getElementById('theme-toggle-checkbox');
+    const currentTheme = localStorage.getItem('theme');
+
+    // Apply the saved theme on page load
+    if (currentTheme) {
+        document.body.classList.add(currentTheme);
+        if (currentTheme === 'dark-mode') {
+            themeToggle.checked = true;
+        }
+    }
+
+    // Function to switch the theme
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
+        }
+    }
+
+    // Event listener for the toggle
+    if (themeToggle) {
+        themeToggle.addEventListener('change', switchTheme, false);
+    }
+    // --- END: DARK MODE LOGIC ---
+/**
+ * Interactive Particle Field for CGL Hustle Hero Section
+ * This script is now embedded directly to prevent file loading errors.
+ */
+// --- START: PARTICLE HERO LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Find the hero section and the canvas element.
+    const heroSection = document.querySelector('.hero-section');
+    const canvas = document.getElementById('hero-particle-canvas');
+
+    // If they don't exist on the current page, stop the script.
+    if (!heroSection || !canvas) {
+        return; 
+    }
+
+    const ctx = canvas.getContext('2d');
+    let w, h;
+
+    // --- Configuration ---
+    const PARTICLE_COLOR = '#a3b0c1';
+    const PARTICLE_COUNT = 2000;      // Increased count for better coverage
+    const MOUSE_INFLUENCE = 80;       // Increased influence radius
+    const MOUSE_FORCE = 0.04;
+    const PULL_BACK_FORCE = 0.02;
+    const FRICTION = 0.92;
+
+    const particles = [];
+    const mouse = { x: -9999, y: -9999 };
+
+    /**
+     * Resizes the canvas to fit the hero section and re-initializes particles.
+     */
+    function resize() {
+        w = canvas.width = heroSection.offsetWidth;
+        h = canvas.height = heroSection.offsetHeight;
+        initParticles(); // Re-initialize the particles on resize
+    }
+
+    /**
+     * Initializes or re-initializes all particles, giving them a random position
+     * across the entire canvas area.
+     */
+    function initParticles() {
+        particles.length = 0; // Clear existing particles
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            // Distribute particles randomly across the full width and height
+            const x = Math.random() * w;
+            const y = Math.random() * h;
+
+            particles.push({
+                x, y,       // Current position
+                ox: x, oy: y, // Original (home) position
+                vx: 0, vy: 0, // Velocity
+                phase: Math.random() * Math.PI * 2, // Phase for gentle floating motion
+                amp: Math.random() * 4 + 2        // Amplitude for floating motion
+            });
+        }
+    }
+
+    /**
+     * Updates the position of each particle based on physics and mouse interaction.
+     */
+    function updateParticles() {
+        const t = Date.now() * 0.0015; // Time factor for the gentle floating
+
+        for (let p of particles) {
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            // Check if mouse is close enough to influence the particle
+            if (dist < MOUSE_INFLUENCE) {
+                const angle = Math.atan2(dy, dx);
+                const force = (MOUSE_INFLUENCE - dist) * MOUSE_FORCE;
+                // Apply force to the particle's velocity
+                p.vx += Math.cos(angle) * force;
+                p.vy += Math.sin(angle) * force;
+            }
+
+            // Calculate the gentle floating position around the original home
+            const floatingX = p.ox + Math.cos(t + p.phase) * p.amp;
+            const floatingY = p.oy + Math.sin(t + p.phase) * p.amp;
+
+            // Apply the pull-back force to return the particle towards its floating home
+            p.vx += (floatingX - p.x) * PULL_BACK_FORCE;
+            p.vy += (floatingY - p.y) * PULL_BACK_FORCE;
+
+            // Apply friction to slow the particle down
+            p.vx *= FRICTION;
+            p.vy *= FRICTION;
+
+            // Update the particle's actual position
+            p.x += p.vx;
+            p.y += p.vy;
+        }
+    }
+
+    /**
+     * Draws all particles onto the canvas.
+     */
+    function drawParticles() {
+        // Clear the canvas with the hero section's background color.
+        ctx.fillStyle = '#e9eef2';
+        ctx.fillRect(0, 0, w, h);
+
+        // Set the color for the particles
+        ctx.fillStyle = PARTICLE_COLOR;
+        ctx.beginPath(); // Begin a new path for efficiency
+        for (let p of particles) {
+            ctx.moveTo(p.x, p.y);
+            ctx.arc(p.x, p.y, 1.1, 0, Math.PI * 2);
+        }
+        ctx.fill(); // Fill all the particle paths at once
+    }
+
+    /**
+     * The main animation loop.
+     */
+    function animate() {
+        updateParticles();
+        drawParticles();
+        requestAnimationFrame(animate);
+    }
+
+    // --- Event Listeners ---
+
+    // Update mouse coordinates relative to the hero section
+    heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+
+    // When the mouse leaves the hero section, move the mouse tracker far away
+    heroSection.addEventListener('mouseleave', () => {
+        mouse.x = -9999;
+        mouse.y = -9999;
+    });
+
+    // Listen for window resize to re-calculate canvas dimensions
+    window.addEventListener('resize', resize);
+
+    // --- Initialization ---
+    resize();   // Initial setup
+    animate();  // Start the animation loop
+});
+</script>
+<!-- ================================================= -->
+<!-- ===== END: EMBEDDED HERO PARTICLE SCRIPT (FIX) ==== -->
+<!-- ================================================= -->

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page-Specific SEO Tags -->
+    <title>About Us | CGL Hustle</title>
+    <meta name="description" content="Learn the story behind CGL Hustle and meet the team dedicated to creating the best SSC CGL preparation platform.">
+     <!-- Common Links and Tags -->
+   <!-- Load Global and Page-Specific Styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <!-- Then, load the specific stylesheet for this page's content -->
+  <link rel="stylesheet" href="/css/about-page.css">
+  <link rel="stylesheet" href="/css/index.css">
+    <!-- ========================= -->  
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="manifest" href="/my-favicon/manifest.json?v=3" />        
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    <!--#include virtual="/_header.html" -->
+
+    <main class="site-main">
+        <div class="about-hero">
+            <div class="container" data-aos="fade-up">
+                <h1 class="about-hero-title">Our Story</h1>
+                <p class="about-hero-subtitle">Born from a passion to help every SSC CGL aspirant achieve their dream.</p>
+            </div>
+        </div>
+
+        <div class="container about-content-container">
+            <section class="about-section" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="about-section-title">Our Mission</h2>
+                <p>At CGL Hustle, our mission is simple: to provide a high-quality, accessible, and effective platform for every student preparing for the SSC CGL examination. We noticed a gap between expensive coaching and the real needs of students. We are here to bridge that gap with meticulously crafted quizzes, detailed analysis, and a supportive community environment. We believe that with the right tools, every aspirant can hustle their way to success.</p>
+            </section>
+
+            <section class="about-section" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="about-section-title">Meet the Creators</h2>
+                <!-- We reuse the existing team-grid styles for consistency -->
+                <div class="team-grid">
+                    <div class="team-member-card">
+                        <img src="/images/aalok.jpg" alt="Aalok Kumar - Owner">
+                        <h4><a href="/team/aalok.shtml">Aalok Kumar</a></h4>
+                        <p class="role">Owner & Visionary</p>
+                        <p class="description">Aalok is the driving force behind our mission, ensuring every feature aligns with the core goal of helping students.</p>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="/images/ashu.jpg" alt="Ashu Mishra - CEO">
+                        <h4><a href="/team/ashu.shtml">Ashu Mishra</a></h4>
+                        <p class="role">CEO & Strategist</p>
+                        <p class="description">Ashu masterfully leads our operational strategy, ensuring smooth and effective content delivery.</p>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="/images/dheeraj.jpg" alt="Dheeraj Kumar - Technical Head">
+                        <h4><a href="/team/dheeraj.shtml">Dheeraj Kumar</a></h4>
+                        <p class="role">Technical Head</p>
+                        <p class="description">Dheeraj is the architect of this platform, turning our vision into a seamless and robust user experience.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!--#include virtual="/_footer.html" -->
+</body>
+</html>
