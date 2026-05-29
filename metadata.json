@@ -1,0 +1,6 @@
+{
+  "name": "CGL Hustle",
+  "description": "Mock test quiz app for competitive exams with subject, sectional, and full syllabus tests, performance tracking and custom quiz creation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
