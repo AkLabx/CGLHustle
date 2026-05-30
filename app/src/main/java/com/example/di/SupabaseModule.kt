@@ -20,8 +20,8 @@ object SupabaseModule {
     @PrimaryBackend
     val primaryClient: SupabaseClient by lazy {
         createSupabaseClient(
-            supabaseUrl = BuildConfig.PRIMARY_SUPABASE_URL,
-            supabaseKey = BuildConfig.PRIMARY_SUPABASE_ANON_KEY
+            supabaseUrl = BuildConfig.CGL_HUSTLE_SUPABASE_URL,
+            supabaseKey = BuildConfig.CGL_HUSTLE_SUPABASE_ANON_KEY
         ) {
             defaultSerializer = KotlinXSerializer(appJson)
             install(Postgrest)

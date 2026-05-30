@@ -131,7 +131,6 @@ class MainActivity : ComponentActivity() {
                                 viewModel = viewModel,
                                 onBack = { navController.popBackStack() },
                                 onQuizSelected = { quizId -> 
-                                    viewModel.startQuiz(quizId)
                                     navController.navigate(ActiveQuizRoute(quizId))
                                 }
                             )
@@ -175,7 +174,6 @@ class MainActivity : ComponentActivity() {
                                 initialTab = route.tab,
                                 onNavigateBack = { navController.popBackStack() },
                                 onQuizSelected = { quizId ->
-                                    viewModel.startQuiz(quizId)
                                     navController.navigate(ActiveQuizRoute(quizId))
                                 }
                             )
