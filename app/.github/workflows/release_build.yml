@@ -19,8 +19,9 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+    # Compile using gradle because gradlew is not present in the runtime
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
 
     # NEW STEP: Generate a dummy debug keystore for the runner so the fallback doesn't crash
     - name: Generate Dummy Debug Keystore
@@ -29,7 +30,7 @@ jobs:
         keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "C=US, O=Android, CN=Android Debug"
 
     - name: Build Release APK and AAB
-      run: ./gradlew assembleRelease bundleRelease
+      run: gradle assembleRelease bundleRelease
       env:
         CGL_HUSTLE_SUPABASE_URL: ${{ secrets.CGL_HUSTLE_SUPABASE_URL }}
         CGL_HUSTLE_SUPABASE_ANON_KEY: ${{ secrets.CGL_HUSTLE_SUPABASE_ANON_KEY }}
@@ -53,7 +54,7 @@ jobs:
     - name: Failure Notification
       if: failure()
       run: |
-        echo "## ❌ Build Failed" >> $GITHUB_STEP_SUMMARY
+        echo "## âŒ Build Failed" >> $GITHUB_STEP_SUMMARY
         echo "The CGL Hustle release build failed. Please check the logs." >> $GITHUB_STEP_SUMMARY
         echo "Job: ${{ github.job }}" >> $GITHUB_STEP_SUMMARY
         echo "Run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
