@@ -102,7 +102,39 @@ class ActiveQuizViewModel(
                         startTimer(kotlin.math.max(0, finalState.quizTimeRemaining))
                     }
                 } else {
-                    _hydrationState.value = com.example.viewmodel.HydrationState.Error("Quiz Data Corrupted: Not found locally")
+                    val mockQuiz = com.example.data.MockQuizData.availableQuizzes.find { it.id == quizId }
+                    if (mockQuiz != null) {
+                        val activeQuestions = mockQuiz.questions.map { q ->
+                            com.example.domain.models.QuestionPayload(
+                                id = q.id,
+                                questionText = q.text,
+                                options = q.options,
+                                correctOption = ('A' + q.correctOptionIndex).toString(),
+                                explanation = kotlinx.serialization.json.JsonPrimitive(q.explanation),
+                                topic = q.topic
+                            )
+                        }
+                        val finalState = com.example.domain.models.QuizRuntimeState(
+                            quizId = mockQuiz.id,
+                            quizName = mockQuiz.title,
+                            quizTimeRemaining = mockQuiz.timeLimitMinutes * 60000,
+                            activeQuestions = activeQuestions,
+                            mode = "learning",
+                            currentQuestionIndex = 0
+                        )
+                        _uiState.update { finalState }
+                        _timeRemaining.value = mockQuiz.timeLimitMinutes * 60
+                        
+                        val mappedSession = com.example.model.QuizSessionState(
+                            quiz = mockQuiz,
+                            isSubmitted = false
+                        )
+                        _hydrationState.value = com.example.viewmodel.HydrationState.Success(mappedSession)
+                        
+                        startTimer(mockQuiz.timeLimitMinutes * 60000)
+                    } else {
+                        _hydrationState.value = com.example.viewmodel.HydrationState.Error("Quiz Data Corrupted: Not found locally")
+                    }
                 }
             } catch (e: Exception) {
                 _hydrationState.value = com.example.viewmodel.HydrationState.Error(e.message ?: "Unknown error")

@@ -167,7 +167,7 @@ class MainActivity : ComponentActivity() {
                                     }
                                 }
                             }
-                            val libraryViewModel = ViewModelProvider(this@MainActivity, libraryFactory)[com.example.ui.viewmodel.QuizLibraryViewModel::class.java]
+                            val libraryViewModel = ViewModelProvider(backStackEntry, libraryFactory)[com.example.ui.viewmodel.QuizLibraryViewModel::class.java]
                             
                             com.example.ui.screens.QuizLibraryScreen(
                                 viewModel = libraryViewModel,
@@ -195,7 +195,7 @@ class MainActivity : ComponentActivity() {
                                     }
                                 }
                             }
-                            val activeQuizViewModel = ViewModelProvider(this@MainActivity, activeFactory)[com.example.ui.viewmodel.ActiveQuizViewModel::class.java]
+                            val activeQuizViewModel = ViewModelProvider(backStackEntry, activeFactory)[com.example.ui.viewmodel.ActiveQuizViewModel::class.java]
 
                             ActiveQuizScreen(
                                 viewModel = activeQuizViewModel,
